@@ -7,3 +7,8 @@
 *{
     font-family: 'Poppins', sans-serif !important;
 }
+#mobNav{
+    height: 0px;
+    transition: .5s;
+    overflow: hidden;
+}

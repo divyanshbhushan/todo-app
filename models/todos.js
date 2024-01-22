@@ -12,9 +12,6 @@ const todoSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  tasks: [{
-    type: String,
-  }],
 });
 
 const Todo = mongoose.model('Todo', todoSchema);
