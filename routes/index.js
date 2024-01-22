@@ -8,7 +8,7 @@ const {isLoggedIn} = require('../middlewares/isLoggedIn')
 // Passport configuration
 passport.use(new localStrategy(userModel.authenticate()));
 
-router.get('/', isLoggedIn, (req, res) => {
+router.get('/', (req, res) => {
   res.render('index');
 });
 
