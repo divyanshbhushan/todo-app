@@ -8,11 +8,13 @@
   </head>
   <body>
     <%- include('./partials/nav') %>
-      <section class="">
-        <div id="tasks">
-
+      <section class="px-20 mt-10 flex">
+        <div id="tasks" class="w-full z-[-1] bg-green-500">
+          Task Tab
         </div>
-        <div id="addTask">
+        
+        <div id="addTask" class="w-40 z-10 bg-purple-400 absolute left-1">
+          <h3 class="">Add a task</h3>
           <form action="/addtask" method="post">
             <input type="text" name="title" placeholder="Enter task title" required>
             <textarea name="description" id="description" cols="30" rows="10" class="" placeholder="Enter task description"></textarea>
