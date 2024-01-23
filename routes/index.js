@@ -2,14 +2,19 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const userModel = require('../models/users');
+const todoModel = require('../models/todos');
 const localStrategy = require('passport-local');
 const {isLoggedIn} = require('../middlewares/isLoggedIn')
 
 // Passport configuration
 passport.use(new localStrategy(userModel.authenticate()));
 
-router.get('/', (req, res) => {
-  res.render('index');
+router.get('/', isLoggedIn, async (req, res) => {
+  const userData = await userModel.findOne({username: req.session.passport.user}).populate("todoList")
+  console.log(userData)
+  res.render('index', {
+    list: userData.todoList
+  });
 });
 
 router.get('/register', (req, res) => {

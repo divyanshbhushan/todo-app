@@ -12,3 +12,16 @@
     transition: .5s;
     overflow: hidden;
 }
+#tasks{
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.expand-title{
+    cursor: pointer;
+}
+.multiLineTruncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}

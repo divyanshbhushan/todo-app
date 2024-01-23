@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
   },
   todoList: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Todo"
+    ref: "Todo",
   }],
   isAdmin: {
     type: Boolean,
