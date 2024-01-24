@@ -4,11 +4,21 @@
     <a href="#" class="text-purple-700 font-semibold hover:text-purple-800 text-lg">
       Todo App
     </a>
-    <button class="w-5 h-5 hidden max-md:inline-block" id="nav-toggler">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
-      </svg>
-    </button>
+    <ul class="flex items-center gap-2">
+      <li>
+        <button class="w-5 h-5 hidden max-md:inline-block theme-switcher">
+          <img src="/svg/sun-line.svg" alt="">
+
+        </button>
+      </li>
+      <li>
+        <button class="w-5 h-5 hidden max-md:inline-block" id="nav-toggler">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+          </svg>
+        </button>
+      </li>
+    </ul>
   </div>
   <ul class="flex items-center gap-2 max-md:hidden">
     <li class="font-medium text-zinc-700 hover:text-zinc-800">
@@ -16,6 +26,11 @@
     </li>
     <li class="font-medium text-zinc-700 hover:text-zinc-800">
       <a href="/about" class="">About</a>
+    </li>
+    <li class="w-5 h-5">
+      <button class="w-5 h-5 max-md:hidden theme-switcher">
+        <img src="/svg/sun-line.svg" alt="">
+      </button>
     </li>
     <li class="border-2 border-transparent rounded-3xl hover:border-zinc-100 focus-within:border-zinc-100">
       <form role="search" class="flex items-center gap-1 bg-zinc-200 border-zinc-300 border-2 px-3 rounded-3xl">
@@ -55,14 +70,5 @@
   </nav>
 </nav>
 <script>
-  const mobNav = document.getElementById("mobNav");
-  const navToggler = document.querySelector("#nav-toggler");
 
-  navToggler.addEventListener("click", () => {
-    if (mobNav.style.height == "205px"){
-      mobNav.style.height = "0px"
-    } else{
-      mobNav.style.height = "205px"
-    }
-  });
 </script>

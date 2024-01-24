@@ -13,9 +13,9 @@
     <section class="px-16 mt-10 flex items-center justify-center relative h-[80vh]">
       <h3 class="absolute text-8xl font-extrabold text-zinc-100 z-[-2]">Todos</h3>
       <div id="tasks" class="w-full z-[1] h-full rounded-3xl flex flex-wrap gap-6">
-        <!-- <h2 class="font-semibold text-2xl text-zinc-700 tracking-tight">Your Tasks</h2> -->
         <% list.forEach((task)=> { %>
-          <div class="w-64 border-2 border-zinc-300 shadow-lg relative rounded-2xl min-h-64 bg-zinc-50 px-5 pt-3 overflow-hidden">
+          <div
+            class="w-64 border-2 border-zinc-300 shadow-lg relative rounded-2xl min-h-64 bg-zinc-50 px-5 pt-3 overflow-hidden">
             <div class="mb-10">
               <h3 class="font-semibold text-zinc-800 dark:text-zinc-300 text-lg tracking-tight relative flex mb-5">
                 <span class="truncate inline-block w-4/5">
@@ -32,7 +32,9 @@
                 </abbr>
               </h3>
               <p class="relative">
-                <span class="multiLineTruncate mt-3 text-zinc-600 font-medium"><%= task.description %></span>
+                <span class="multiLineTruncate mt-3 text-zinc-600 font-medium">
+                  <%= task.description %>
+                </span>
                 <abbr title="Expand description">
                   <button class="expand-desc w-5 absolute right-0 bottom-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -44,14 +46,23 @@
                 </abbr>
               </p>
             </div>
-            <div class="absolute bottom-0 h-10 w-full bg-purple-700 left-0 flex justify-between gap-3 items-center px-6">
+            <div
+              class="absolute bottom-0 h-10 w-full bg-purple-700 left-0 flex justify-between gap-3 items-center px-6">
               <h4 class="text-zinc-50 text-xs">Edit or Delete task</h4>
               <div class="flex gap-3">
                 <button class="px-1 py-1 rounded-md bg-purple-50 hover:bg-purple-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7.24264 17.9967H3V13.754L14.435 2.319C14.8256 1.92848 15.4587 1.92848 15.8492 2.319L18.6777 5.14743C19.0682 5.53795 19.0682 6.17112 18.6777 6.56164L7.24264 17.9967ZM3 19.9967H21V21.9967H3V19.9967Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M7.24264 17.9967H3V13.754L14.435 2.319C14.8256 1.92848 15.4587 1.92848 15.8492 2.319L18.6777 5.14743C19.0682 5.53795 19.0682 6.17112 18.6777 6.56164L7.24264 17.9967ZM3 19.9967H21V21.9967H3V19.9967Z">
+                    </path>
+                  </svg>
                 </button>
                 <button class="px-1 py-1 rounded-md bg-red-500 text-white hover:bg-red-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z">
+                    </path>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -68,36 +79,7 @@
         </form>
       </div>
     </section>
-    <script>
-      const isTruncated = (el) => {
-        return el.scrollWidth > el.clientWidth;
-      };
-      const titleCollapse = () => {
-        document.querySelectorAll(".expand-title").forEach(button => {
-          const contentContainer = button.parentElement.previousElementSibling;
-          button.classList.toggle('hidden', contentContainer.scrollWidth <= contentContainer.clientWidth);
-          button.addEventListener("click", () => {
-            button.classList.toggle('rotate-180');
-            contentContainer.classList.toggle('truncate');
-          });
-        });
-      }; 
-      const descCollapse = () => {
-        document.querySelectorAll(".expand-desc").forEach(button => {
-          const contentContainer = button.parentElement.previousElementSibling;
-          button.classList.toggle('hidden', contentContainer.scrollHeight <= contentContainer.clientHeight);
-          button.addEventListener("click", () => {
-            button.classList.toggle('rotate-180');
-            contentContainer.classList.toggle('multiLineTruncate');
-          });
-        });
-      }; 
-      
-      
-      
-      descCollapse();
-      titleCollapse();
-    </script>
+    <script src="/javascripts/frontend.js"></script>
 </body>
 
 </html>
