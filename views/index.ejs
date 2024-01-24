@@ -8,14 +8,14 @@
   <%- include('./partials/links') %>
 </head>
 
-<body>
+<body class="dark:bg-zinc-950">
   <%- include('./partials/nav') %>
     <section class="px-16 mt-10 flex items-center justify-center relative h-[80vh]">
-      <h3 class="absolute text-8xl font-extrabold text-zinc-100 z-[-2]">Todos</h3>
+      <h3 class="absolute text-8xl font-extrabold text-zinc-100 dark:text-zinc-800 z-[-2]">Todos</h3>
       <div id="tasks" class="w-full z-[1] h-full rounded-3xl flex flex-wrap gap-6">
         <% list.forEach((task)=> { %>
           <div
-            class="w-64 border-2 border-zinc-300 shadow-lg relative rounded-2xl min-h-64 bg-zinc-50 px-5 pt-3 overflow-hidden">
+            class="w-64 border-2 border-zinc-300 shadow-lg relative rounded-2xl min-h-64  bg-zinc-50 px-5 pt-3 overflow-hidden">
             <div class="mb-10">
               <h3 class="font-semibold text-zinc-800 dark:text-zinc-300 text-lg tracking-tight relative flex mb-5">
                 <span class="truncate inline-block w-4/5">
@@ -57,7 +57,7 @@
                     </path>
                   </svg>
                 </button>
-                <button class="px-1 py-1 rounded-md bg-red-500 text-white hover:bg-red-600">
+                <button class="px-1 py-1 rounded-md bg-red-500 text-white hover:bg-red-600" id="deleteTask">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" fill="currentColor">
                     <path
                       d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z">
@@ -80,6 +80,7 @@
       </div>
     </section>
     <script src="/javascripts/frontend.js"></script>
+    <script src="/javascripts/deleteTask.js"></script>
 </body>
 
 </html>
